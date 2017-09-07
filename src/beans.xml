@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id = "fileQuizService" class = "com.janbask.training3.FileQuizService">
+        <property name = "fileName" value = "src/data/questions.dat"/>
+    </bean>
+    <bean id = "quizMaster" class = "com.janbask.training3.QuizMaster">
+        <property name = "quizService">
+            <ref local="fileQuizService"/>
+        </property>
+    </bean>
+</beans>
